@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery | CodeAlpha</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Image Gallery</h1>
+    <nav class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="city">City</button>
+    </nav>
+  </header>
+
+  <main class="gallery">
+    <figure class="gallery-item" data-category="nature">
+      <img src="assets/images/1.jpg" alt="Green hills at sunrise" />
+      <figcaption>Hills</figcaption>
+    </figure>
+    <figure class="gallery-item" data-category="nature">
+      <img src="assets/images/2.jpg" alt="Forest path" />
+      <figcaption>Forest</figcaption>
+    </figure>
+    <figure class="gallery-item" data-category="nature">
+      <img src="assets/images/3.jpg" alt="Lake view" />
+      <figcaption>Lake</figcaption>
+    </figure>
+    <figure class="gallery-item" data-category="city">
+      <img src="assets/images/4.jpg" alt="City skyline" />
+      <figcaption>Skyline</figcaption>
+    </figure>
+    <figure class="gallery-item" data-category="city">
+      <img src="assets/images/5.jpg" alt="Street at night" />
+      <figcaption>Street</figcaption>
+    </figure>
+    <figure class="gallery-item" data-category="city">
+      <img src="assets/images/6.jpg" alt="Bridge in the city" />
+      <figcaption>Bridge</figcaption>
+    </figure>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button id="close" class="lb-btn close" aria-label="Close">✕</button>
+    <button id="prev" class="lb-btn prev" aria-label="Previous">‹</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button id="next" class="lb-btn next" aria-label="Next">›</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
