@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Image Gallery | CodeAlpha</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#e94560" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
 </head>
 <body>
   <header>
@@ -18,27 +21,27 @@
 
   <main class="gallery">
     <figure class="gallery-item" data-category="nature">
-      <img src="assets/images/1.jpg" alt="Green hills at sunrise" />
+      <img src="assets/images/1.jpg" alt="Green hills at sunrise" loading="lazy" />
       <figcaption>Hills</figcaption>
     </figure>
     <figure class="gallery-item" data-category="nature">
-      <img src="assets/images/2.jpg" alt="Forest path" />
+      <img src="assets/images/2.jpg" alt="Forest path" loading="lazy" />
       <figcaption>Forest</figcaption>
     </figure>
     <figure class="gallery-item" data-category="nature">
-      <img src="assets/images/3.jpg" alt="Lake view" />
+      <img src="assets/images/3.jpg" alt="Lake view" loading="lazy" />
       <figcaption>Lake</figcaption>
     </figure>
     <figure class="gallery-item" data-category="city">
-      <img src="assets/images/4.jpg" alt="City skyline" />
+      <img src="assets/images/4.jpg" alt="City skyline" loading="lazy" />
       <figcaption>Skyline</figcaption>
     </figure>
     <figure class="gallery-item" data-category="city">
-      <img src="assets/images/5.jpg" alt="Street at night" />
+      <img src="assets/images/5.jpg" alt="Street at night" loading="lazy" />
       <figcaption>Street</figcaption>
     </figure>
     <figure class="gallery-item" data-category="city">
-      <img src="assets/images/6.jpg" alt="Bridge in the city" />
+      <img src="assets/images/6.jpg" alt="Bridge in the city" loading="lazy" />
       <figcaption>Bridge</figcaption>
     </figure>
   </main>
@@ -49,8 +52,15 @@
     <button id="prev" class="lb-btn prev" aria-label="Previous">‹</button>
     <img id="lightbox-img" src="" alt="" />
     <button id="next" class="lb-btn next" aria-label="Next">›</button>
+    <p id="counter" class="counter"></p>
   </div>
 
   <script src="js/script.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+  </script>
+
 </body>
 </html>

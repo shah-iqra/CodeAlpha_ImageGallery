@@ -6,8 +6,9 @@ const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.getElementById("close");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
+const counter = document.getElementById("counter");
 
-// 2. State: বর্তমানে দৃশ্যমান ছবিগুলো এবং কোনটা খোলা
+// 2. State
 let visible = [...items];
 let current = 0;
 
@@ -32,6 +33,7 @@ function showImage() {
   const img = visible[current].querySelector("img");
   lightboxImg.src = img.src;
   lightboxImg.alt = img.alt;
+  counter.textContent = `${current + 1} / ${visible.length}`;
 }
 
 function openLightbox(index) {
@@ -65,7 +67,7 @@ closeBtn.addEventListener("click", closeLightbox);
 nextBtn.addEventListener("click", nextImage);
 prevBtn.addEventListener("click", prevImage);
 
-// Overlay-এর খালি জায়গায় ক্লিক করলে বন্ধ হবে (ছবি বা বাটনে নয়)
+// Dark background-এ ক্লিক করলে বন্ধ হবে
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) closeLightbox();
 });
